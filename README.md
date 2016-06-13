@@ -2,5 +2,6 @@
 
 mysql:5.6.30
 apache:
-php
+php:
+memcache:
 
