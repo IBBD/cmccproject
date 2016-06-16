@@ -1,0 +1,24 @@
+mysql:
+    image: ibbd/cmccproject
+    container_name: mysql    
+    ports:
+        #- 3306:3306
+        - 8080:80
+        #- 443:443        
+    environment: 
+        - MYSQL_ROOT_PASSWORD=111111
+    volumes:
+        - /data/my:/var/lib/mysql
+        - /var/log/mysql:/var/log/mysql
+        - /var/log/php:/var/log/php
+        - ./config/memcached.conf:/etc/memcached.conf:ro 
+        - ./config/my.cnf:/etc/mysql/my.cnf:ro
+        - ./config/apache2.conf:/etc/apache2/apache2.conf:ro  
+        - ./config/mpm_prefork.conf:/etc/apache2/mods-enabled/mpm_prefork.conf:ro
+        - ./config/php.ini:/usr/local/etc/php/php.ini:ro 
+        - ./config/php-fpm.conf:/usr/local/etc/php-fpm.conf:ro   
+            
+   
+    
+
+
