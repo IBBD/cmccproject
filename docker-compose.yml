@@ -1,6 +1,6 @@
 mysql:
     image: ibbd/cmccproject
-    container_name: mysql    
+    container_name:ibbd-cmccproject    
     ports:
         #- 3306:3306
         - 8080:80
@@ -8,6 +8,8 @@ mysql:
     environment: 
         - MYSQL_ROOT_PASSWORD=111111
     volumes:
+        - /var/www/:/var/www/
+        - /etc/apache2/sites-enabled/:/etc/apache2/sites-enabled/
         - /data/my:/var/lib/mysql
         - /var/log/mysql:/var/log/mysql
         - /var/log/php:/var/log/php
